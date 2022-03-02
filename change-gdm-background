@@ -46,7 +46,6 @@ restore () {
 mv "$gdm3Resource~" "$gdm3Resource"
 if [ "$?" -eq 0 ]; then
     chmod 644 "$gdm3Resource"
-    service gdm restart
 fi
 }
 
@@ -91,7 +90,6 @@ if [ "$?" -eq 0 ]; then
 # Solve a permission change issue (thanks to @huepf from github).
     chmod 644 "$gdm3Resource"
     echo 'GDM background sucessfully changed.'
-    service gdm restart
 else
     # If something went wrong, restore backup file.
     echo 'something went wrong.'
